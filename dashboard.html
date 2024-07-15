@@ -1,0 +1,145 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Dashboard | By Code Info</title>
+      <link rel="stylesheet" href="styleD.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="styleD.css"/>
+      <script>
+        function interview(){
+            window.location.assign("Recruitment.html");
+        }
+        function Progress(){
+          window.location.assign("Progress.html");
+        }
+      </script>
+    </head>
+    <body>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="#" class="logo">
+              <img src="img/dashboard-8312011_1280.webp" alt="">
+              <span class="nav-item">DashBoard</span>
+            </a></li>
+            <li><a href="">
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Profile</span>
+              </a></li>
+            <li><a href="#">
+              <i class="fas fa-home"></i>
+              <span class="nav-item"><button onclick="interview()">Recruitment</button></span>
+            </a></li>
+           
+            <li><a href="">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item">Analytics</span>
+            </a></li>
+            <li><a href="">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Tasks</span>
+            </a></li>
+            <li><a href="">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Settings</span>
+            </a></li>
+            <li><a href="">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a></li>
+            <li><a href="" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a></li>
+          </ul>
+        </nav>
+
+        <section class="main">
+         <main> 
+          <div class="date">
+            <span id="current-date"></span>
+        </div>
+      </main>
+        <div class="main" >
+          <div class="main-top">
+            <h1>You Need to Hire</h1>
+            <i class="fas fa-user-cog"></i>
+          </div>
+          <div class="main-skills">
+            <div class="card">
+              <i class="fas fa-laptop-code"></i>
+              <a href="#" class="logos">
+              <img src="img/web-developer-logo-template_674356-207.avif" alt=""></a>
+              <h3>Web developer</h3>
+              
+              
+            </div>
+            <div class="card">
+              <i class="fab fa-wordpress"></i>
+              <a href="#" class="logos">
+                <img src="img/PHP-logo.svg.png" alt=""></a>
+              <h3>PHP developer</h3>
+            </div>
+            <div class="card">
+              <i class="fas fa-palette"></i>
+              <a href="#" class="logos">
+                <img src="img/d53bf428f2100e0bdde420f201fb9afec8a42758-731x731.png" alt=""></a>
+              <h3>graphic designer</h3>   
+            </div>
+            <div class="card">
+              <i class="fab fa-app-store-ios"></i>
+              <a href="#" class="logos">
+                <img src="img/ios-icon-logo-software-phone-apple-symbol-with-name-black-design-mobile-illustration-free-vector_1687630747.jpeg" alt=""></a>
+              <h3>IOS developer</h3>   
+            </div>
+          </div>
+          <section class="main-course">
+            <h1>Candidate progress</h1>
+            <div class="course-box">
+              <ul>
+                <li class="active">In progress</li> 
+                
+              </ul>
+              <div class="course">
+                <div class="box">
+                  <h3>Candidate 1</h3><i class="logoss">
+                  <img src="img/user-member-avatar-face-profile-icon-vector-22965342.jpg" alt=""></i>
+                  <p>80% - progress</p>
+                  <button onclick="Progress()">continue</button>
+                  
+                </div>
+                <div class="box">
+                  <h3>Candidate 2</h3><i class="logoss">
+                    <img src="img/user-member-avatar-face-profile-icon-vector-22965342.jpg" alt=""></i>
+                  <p>50% - progress</p>
+                  <button>continue</button>
+                  <i class="fab fa-css3-alt css"></i>
+                </div>
+                <div class="box">
+                  <h3>Candidate 3</h3><i class="logoss">
+                    <img src="img/user-member-avatar-face-profile-icon-vector-22965342.jpg" alt=""></i>
+                  <p>30% - progress</p>
+                  <button>continue</button>
+                  <i class="fab fa-js-square js"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+      <script>
+        // Function to update current date and time
+        function updateDateTime() {
+            var currentDate = new Date();
+            var dateElement = document.getElementById("current-date");
+            dateElement.innerText =currentDate.toDateString() + "  " + currentDate.toLocaleTimeString();
+        }
+    
+        // Call the function initially and then update it every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    
+    </script>
+    </body>
+</html></span>
