@@ -109,7 +109,12 @@
                 id="signup-password"
               />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input
+              type="submit"
+              class="btn"
+              value="Sign up"
+              onclick="validateSignUpForm()"
+            />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -160,7 +165,7 @@
           // Perform form validation here if needed
           // For demonstration purpose, assuming the validation is successful
           if (username.length < 8) {
-            alert("min");
+            alert("Atleast 8 Characters Required for Username");
             return false;
           }
           if (username && password) {
@@ -176,7 +181,7 @@
         var username = document.getElementById("signup-username").value;
         var email = document.getElementById("signup-email").value;
         var password = document.getElementById("signup-password").value;
-        if (username.trim() == "") {
+        if (username === "") {
           alert("Username must be filled out");
           return false;
         } else if (email.trim() === "") {
@@ -196,27 +201,27 @@
       document.addEventListener("input", function (event) {
         var x = document.getElementById("signin-username").value;
         document.getElementById("signin-username").value = x.replace(
-          /[^a-zA-Z0-9 ]/g,
+          /[^a-zA-Z0-9@. ]/g,
           ""
         );
         var y = document.getElementById("signin-password").value;
         document.getElementById("signin-password").value = y.replace(
-          /[^a-zA-Z0-9 ]/g,
+          /[^a-zA-Z0-9@. ]/g,
           ""
         );
         var z = document.getElementById("signup-username").value;
         document.getElementById("signup-username").value = z.replace(
-          /[^a-zA-Z0-9 ]/g,
+          /[^a-zA-Z0-9@. ]/g,
           ""
         );
         var a = document.getElementById("signup-password").value;
         document.getElementById("signup-password").value = a.replace(
-          /[^a-zA-Z0-9 ]/g,
+          /[^a-zA-Z0-9@. ]/g,
           ""
         );
         var b = document.getElementById("signup-email").value;
         document.getElementById("signup-email").value = b.replace(
-          /[^a-zA-Z0-9 ]/g,
+          /[^a-zA-Z0-9@. ]/g,
           ""
         );
       });
