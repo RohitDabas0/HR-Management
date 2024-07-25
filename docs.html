@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Upload Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #555;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      input[type="file"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      textarea {
+        resize: vertical;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .file-info {
+        margin-top: 10px;
+      }
+      .file-info img {
+        max-width: 200px;
+        display: block;
+        margin-top: 10px;
+      }
+      .optional {
+        font-style: italic;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Document Upload Form</h1>
+    <form id="applicationForm">
+      <!-- Full Name Field -->
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <!-- Age Field -->
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <!-- Phone Number Field -->
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required />
+      </div>
+
+      <!-- University Field -->
+      <div class="form-group">
+        <label for="university">University:</label>
+        <input type="text" id="university" name="university" required />
+      </div>
+
+      <!-- Course Field -->
+      <div class="form-group">
+        <label for="course">Course/Program:</label>
+        <input type="text" id="course" name="course" required />
+      </div>
+
+      <!-- Current Year of Study -->
+      <div class="form-group">
+        <label for="year-of-study">Current Year of Study:</label>
+        <select id="year-of-study" name="year_of_study" required>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+          <option value="5">5th Year</option>
+        </select>
+      </div>
+
+      <!-- CGPA Field -->
+      <div class="form-group">
+        <label for="cgpa">Current CGPA:</label>
+        <input type="number" id="cgpa" name="cgpa" step="0.01" required />
+      </div>
+
+      <!-- 10th Grade Marks Field -->
+      <div class="form-group">
+        <label for="tenth-marks">10th Grade Marks (%):</label>
+        <input
+          type="number"
+          id="tenth-marks"
+          name="tenth_marks"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <!-- 12th Grade Marks Field -->
+      <div class="form-group">
+        <label for="twelfth-marks">12th Grade Marks (%):</label>
+        <input
+          type="number"
+          id="twelfth-marks"
+          name="twelfth_marks"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <!-- Internship Position Field -->
+      <div class="form-group">
+        <label for="position">Position Applied For:</label>
+        <input type="text" id="position" name="position" required />
+      </div>
+
+      <!-- Availability Field -->
+      <div class="form-group">
+        <label for="availability"
+          >Availability (Start Date and Duration):</label
+        >
+        <input
+          type="text"
+          id="availability"
+          name="availability"
+          required
+          placeholder="e.g., Start Date: MM/YYYY, Duration: 3 months"
+        />
+      </div>
+
+      <!-- Previous Experience Field -->
+      <div class="form-group">
+        <label for="experience">Previous Experience (if any):</label>
+        <textarea
+          id="experience"
+          name="experience"
+          rows="4"
+          placeholder="Describe your relevant experience"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Skills Field -->
+      <div class="form-group">
+        <label for="skills">Skills and Competencies:</label>
+        <textarea
+          id="skills"
+          name="skills"
+          rows="4"
+          placeholder="List your relevant skills and competencies"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Achievements Field -->
+      <div class="form-group">
+        <label for="achievements">Achievements (if any):</label>
+        <textarea
+          id="achievements"
+          name="achievements"
+          rows="4"
+          placeholder="Describe any achievements relevant to the internship"
+          required
+        ></textarea>
+      </div>
+
+      <!-- File Uploads -->
+      <div class="form-group">
+        <label for="character-certificate">Character Certificate Upload:</label>
+        <input
+          type="file"
+          id="character-certificate"
+          name="character_certificate"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('character-certificate')"
+        />
+        <div id="character-certificate-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="noc">No Objection Certificate (NOC) Upload:</label>
+        <input
+          type="file"
+          id="noc"
+          name="noc"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('noc')"
+        />
+        <div id="noc-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="transcripts">Transcripts Upload:</label>
+        <input
+          type="file"
+          id="transcripts"
+          name="transcripts"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('transcripts')"
+        />
+        <div id="transcripts-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="passport">Passport Copy Upload:</label>
+        <input
+          type="file"
+          id="passport"
+          name="passport"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('passport')"
+        />
+        <div id="passport-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="address-proof">Proof of Address Upload:</label>
+        <input
+          type="file"
+          id="address-proof"
+          name="address_proof"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('address-proof')"
+        />
+        <div id="address-proof-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="additional-docs"
+          >Additional Documents Upload (optional):</label
+        >
+        <input
+          type="file"
+          id="additional-docs"
+          name="additional_docs"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('additional-docs')"
+        />
+        <div id="additional-docs-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="cover-letter">Cover Letter Upload:</label>
+        <input
+          type="file"
+          id="cover-letter"
+          name="cover_letter"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+          onchange="previewFile('cover-letter')"
+        />
+        <div id="cover-letter-preview" class="file-info"></div>
+      </div>
+      <div class="form-group">
+        <label for="resume">Resume Upload:</label>
+        <input
+          type="file"
+          id="resume"
+          name="resume"
+          accept=".pdf,.doc,.docx"
+          onchange="previewFile('resume')"
+        />
+        <div id="resume-preview" class="file-info"></div>
+      </div>
+
+      <!-- LinkedIn Profile Field -->
+      <div class="form-group">
+        <label for="linkedin">LinkedIn Profile (optional):</label>
+        <input
+          type="url"
+          id="linkedin"
+          name="linkedin"
+          placeholder="https://www.linkedin.com/in/yourprofile"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="button" onclick="generatePDF()">
+          Submit Application
+        </button>
+      </div>
+    </form>
+
+    <!-- Include jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+      function previewFile(inputId) {
+        const fileInput = document.getElementById(inputId);
+        const previewDiv = document.getElementById(`${inputId}-preview`);
+
+        // Clear previous previews
+        previewDiv.innerHTML = "";
+
+        if (fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const fileType = file.type;
+            const fileUrl = e.target.result;
+
+            if (fileType.startsWith("image/")) {
+              // Display image preview
+              const img = document.createElement("img");
+              img.src = fileUrl;
+              previewDiv.appendChild(img);
+            } else if (fileType.startsWith("text/")) {
+              // Display text file content
+              const pre = document.createElement("pre");
+              pre.textContent = e.target.result;
+              previewDiv.appendChild(pre);
+            } else {
+              // Display file name
+              const p = document.createElement("p");
+              p.textContent = file.name;
+              previewDiv.appendChild(p);
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      async function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        let yOffset = 10;
+
+        // Retrieve form data
+        const form = document.getElementById("applicationForm");
+        const formData = new FormData(form);
+
+        // Add text fields to the PDF
+        const fields = [
+          { label: "Full Name", value: formData.get("name") },
+          { label: "Age", value: formData.get("age") },
+          { label: "Email Address", value: formData.get("email") },
+          { label: "Phone Number", value: formData.get("phone") },
+          { label: "University", value: formData.get("university") },
+          { label: "Course/Program", value: formData.get("course") },
+          {
+            label: "Current Year of Study",
+            value: formData.get("year_of_study"),
+          },
+          { label: "Current CGPA", value: formData.get("cgpa") },
+          { label: "10th Grade Marks (%)", value: formData.get("tenth_marks") },
+          {
+            label: "12th Grade Marks (%)",
+            value: formData.get("twelfth_marks"),
+          },
+          { label: "Position Applied For", value: formData.get("position") },
+          { label: "Availability", value: formData.get("availability") },
+          { label: "Previous Experience", value: formData.get("experience") },
+          { label: "Skills and Competencies", value: formData.get("skills") },
+          { label: "Achievements", value: formData.get("achievements") },
+          { label: "Contact Information", value: formData.get("phone") },
+          { label: "LinkedIn Profile", value: formData.get("linkedin") },
+        ];
+
+        fields.forEach(({ label, value }) => {
+          doc.text(`${label}: ${value}`, 10, yOffset);
+          yOffset += 10;
+        });
+
+        // Add file uploads
+        const fileFields = [
+          { label: "Character Certificate", inputId: "character-certificate" },
+          { label: "No Objection Certificate (NOC)", inputId: "noc" },
+          { label: "Transcripts", inputId: "transcripts" },
+          { label: "Passport Copy", inputId: "passport" },
+          { label: "Proof of Address", inputId: "address-proof" },
+          { label: "Additional Documents", inputId: "additional-docs" },
+          { label: "Cover Letter", inputId: "cover-letter" },
+          { label: "Resume", inputId: "resume" },
+        ];
+
+        for (const { label, inputId } of fileFields) {
+          const fileInput = document.getElementById(inputId);
+          if (fileInput.files.length > 0) {
+            doc.text(`${label}: [File Attached]`, 10, yOffset);
+            yOffset += 10;
+          } else {
+            doc.text(`${label}: [No File Attached]`, 10, yOffset);
+            yOffset += 10;
+          }
+        }
+
+        // Save the PDF
+        doc.save("application.pdf");
+      }
+    </script>
+  </body>
+</html>
